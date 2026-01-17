@@ -40,3 +40,40 @@ if (onboardForm) {
         }
     });
 }
+
+// Fetch and Display Products
+async function loadProducts() {
+    const storeId = localStorage.getItem('bnc_store_id');
+    const products = await apiFetch(`/products/store/${storeId}`);
+    
+    const list = document.getElementById('product-list');
+    list.innerHTML = products.map(p => `
+        <tr>
+            <td>${p.name}</td>
+            <td>${p.price.toFixed(2)}</td>
+            <td>${p.stock}</td>
+            <td><button class="btn-sm">Edit</button></td>
+        </tr>
+    `).join('');
+}
+
+// Add New Product
+document.getElementById('add-product-form')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const payload = {
+        name: document.getElementById('p-name').value,
+        price: parseFloat(document.getElementById('p-price').value),
+        stock: parseInt(document.getElementById('p-stock').value)
+    };
+
+    const res = await apiFetch('/products', {
+        method: 'POST',
+        body: JSON.stringify(payload)
+    });
+
+    if (res.product) {
+        closeModal();
+        loadProducts(); // Refresh the list
+    }
+});
+
