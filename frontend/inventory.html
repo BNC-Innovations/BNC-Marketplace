@@ -1,0 +1,30 @@
+<div class="inventory-header">
+    <h2>My Inventory</h2>
+    <button class="btn-main" onclick="openModal()">+ Add Product</button>
+</div>
+
+<table id="product-table">
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Price (K)</th>
+            <th>Stock</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody id="product-list">
+        </tbody>
+</table>
+
+<div id="product-modal" class="modal hidden">
+    <div class="modal-content">
+        <h3>Add New Product</h3>
+        <form id="add-product-form">
+            <input type="text" id="p-name" placeholder="Product Name" required>
+            <input type="number" id="p-price" placeholder="Price" required>
+            <input type="number" id="p-stock" placeholder="Initial Stock" required>
+            <button type="submit" class="btn-main">Save Product</button>
+            <button type="button" onclick="closeModal()">Cancel</button>
+        </form>
+    </div>
+</div>
