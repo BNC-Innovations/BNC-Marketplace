@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BNC Markets | Store Onboarding</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="onboard-container">
+        <div class="onboard-header">
+            <h2>Setup Your Store</h2>
+            <p>Tell us about your business to get started.</p>
+        </div>
+
+        <form id="onboard-form" class="auth-form">
+            <div class="input-group">
+                <label>Business Name</label>
+                <input type="text" id="store-name" placeholder="e.g., Kitwe Fresh Produce" required>
+            </div>
+            
+            <div class="input-group">
+                <label>Store Description</label>
+                <textarea id="store-desc" placeholder="What do you sell?" rows="3" required></textarea>
+            </div>
+
+            <div class="input-group">
+                <label>Physical Address</label>
+                <input type="text" id="store-address" placeholder="e.g., Plot 12, Independence Ave" required>
+            </div>
+
+            <button type="submit" class="btn-main">Launch Store</button>
+        </form>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/vendor.js"></script>
+</body>
+</html>
