@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BNC Markets | My Profile</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dash-layout">
+    <nav class="sidebar">
+        <div class="logo">BNC <span>Markets</span></div>
+        <ul class="nav-menu" id="dynamic-menu">
+            </ul>
+    </nav>
+
+    <main class="main-content">
+        <div class="profile-card">
+            <h2>Account Settings</h2>
+            <form id="profile-form">
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <input type="email" id="user-email" disabled>
+                </div>
+                <div class="input-group">
+                    <label>Phone Number</label>
+                    <input type="text" id="user-phone" placeholder="+260 ...">
+                </div>
+                <div class="input-group">
+                    <label>Account Role</label>
+                    <input type="text" id="user-role" disabled>
+                </div>
+                <button type="submit" class="btn-main">Update Profile</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/ui-utils.js"></script>
+    <script>
+        // Simple script to load profile data on start
+        window.onload = async () => {
+            const user = await apiFetch('/auth/me'); // Endpoint from our API docs
+            if (user) {
+                document.getElementById('user-email').value = user.email;
+                document.getElementById('user-role').value = user.role;
+                document.getElementById('user-phone').value = user.phone || "";
+            }
+        };
+    </script>
+</body>
+</html>
