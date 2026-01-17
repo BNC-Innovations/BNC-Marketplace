@@ -1,0 +1,53 @@
+:root {
+    --primary: #2ecc71;
+    --dark: #2c3e50;
+    --light: #f4f7f6;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 5%;
+    background: var(--white);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo { font-size: 1.5rem; font-weight: bold; }
+.logo span { color: var(--primary); }
+
+.hero {
+    text-align: center;
+    padding: 100px 10%;
+    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('../assets/hero-bg.jpg');
+    background-size: cover;
+    color: var(--white);
+}
+
+.hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+
+.btn-primary { background: var(--primary); color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; }
+.btn-outline { border: 2px solid var(--white); color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; margin-left: 10px; }
+
+.user-paths {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 5%;
+    gap: 20px;
+}
+
+.card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    flex: 1;
+}
